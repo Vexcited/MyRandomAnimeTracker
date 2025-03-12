@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MikkelApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MikkelApp"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarIsVisible="True"
+    Title="MikkelApp">
+
+    <TabBar>
+        <Tab Title="Accueil" Icon="lucide_home.png">
+            <ShellContent 
+                Title="Accueil"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        
+        <Tab Title="Anime" Icon="lucide_square_play.png">
+            <ShellContent
+                Title="Anime"
+                ContentTemplate="{DataTemplate local:AnimeListingPage}"
+                Route="AnimeListingPage" />
+        </Tab>
+        
+        <Tab Title="Ajouter" Icon="lucide_plus.png">
+            <ShellContent
+                Title="Ajouter un anime au dépôt"
+                ContentTemplate="{DataTemplate local:AddAnimePage}"
+                Route="AddAnimePage" />
+        </Tab>
+        
+        <Tab Title="Ma liste" Icon="lucide_list.png">
+            <ShellContent 
+                Title="Ma liste d'anime à regarder"
+                ContentTemplate="{DataTemplate local:MyListPage}"
+                Route="MyListPage" />
+        </Tab>
+    </TabBar>
+</Shell>
