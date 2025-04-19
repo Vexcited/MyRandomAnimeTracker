@@ -7,6 +7,7 @@ public class AnimeService
 {
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://api.jikan.moe/v4";
+    private static List<Anime> _customAnimes = new List<Anime>();
 
     public AnimeService()
     {
@@ -46,12 +47,22 @@ public class AnimeService
                 animes.Add(anime);
             }
 
+            // Add custom animes to the list
+            animes.AddRange(_customAnimes);
             return animes;
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error fetching anime data: {ex.Message}");
-            return new List<Anime>();
+            return _customAnimes; // Return at least the custom animes if API fails
         }
+    }
+
+    public Task AddAnimeAsync(Anime anime)
+    {
+        // Generate a unique negative ID for custom animes
+        anime.MalId = -(_customAnimes.Count + 1);
+        _customAnimes.Add(anime);
+        return Task.CompletedTask;
     }
 }

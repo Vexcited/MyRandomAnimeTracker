@@ -2,8 +2,41 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MikkelApp.AddAnimePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+             x:Class="MikkelApp.AddAnimePage"
+             Title="Add New Anime">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label Text="Add New Anime"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="15">
+                    <Entry x:Name="TitleEntry"
+                           Placeholder="Title"
+                           Text="{Binding Title}"/>
+
+                    <Editor x:Name="DescriptionEntry"
+                            Placeholder="Description"
+                            Text="{Binding Synopsis}"
+                            HeightRequest="100"/>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Entry x:Name="ImageUrlEntry"
+                               Placeholder="Image URL"
+                               Text="{Binding ImageUrl}"
+                               Grid.Column="0"/>
+                        <Button Text="Pick Image"
+                                Clicked="OnPickImageClicked"
+                                Grid.Column="1"
+                                Margin="10,0,0,0"/>
+                    </Grid>
+
+                    <Button Text="Save Anime"
+                            Clicked="OnSaveClicked"
+                            HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
