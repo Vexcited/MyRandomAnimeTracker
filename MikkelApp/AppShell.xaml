@@ -10,28 +10,28 @@
 
     <TabBar>
         <Tab Title="Accueil" Icon="lucide_home.png">
-            <ShellContent 
+            <ShellContent
                 Title="Accueil"
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage" />
         </Tab>
-        
+
         <Tab Title="Anime" Icon="lucide_square_play.png">
             <ShellContent
                 Title="Anime"
                 ContentTemplate="{DataTemplate local:AnimeListingPage}"
                 Route="AnimeListingPage" />
         </Tab>
-        
+
         <Tab Title="Ajouter" Icon="lucide_plus.png">
             <ShellContent
                 Title="Ajouter un anime au dépôt"
                 ContentTemplate="{DataTemplate local:AddAnimePage}"
                 Route="AddAnimePage" />
         </Tab>
-        
+
         <Tab Title="Ma liste" Icon="lucide_list.png">
-            <ShellContent 
+            <ShellContent
                 Title="Ma liste d'anime à regarder"
                 ContentTemplate="{DataTemplate local:MyListPage}"
                 Route="MyListPage" />

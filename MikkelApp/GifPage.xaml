@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MikkelApp.GifPage"
+             Title="GIF Page">
+    <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+        <Frame Padding="0"
+               BorderColor="Transparent"
+               CornerRadius="10">
+            <Image x:Name="GifImage"
+                   Source="trending_animation.gif"
+                   HeightRequest="300"
+                   HorizontalOptions="Center"/>
+        </Frame>
+        <Button Text="Enough? Come back home!"
+                Clicked="OnBackButtonClicked"
+                HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

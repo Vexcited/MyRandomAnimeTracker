@@ -2,22 +2,20 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-
     public MainPage()
     {
         InitializeComponent();
+
+        ImageCarousel.ItemsSource = new List<string>
+        {
+            "trending_carousel1.jpg",
+            "trending_carousel2.jpg",
+            "trending_carousel3.jpg"
+        };
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void OnAnimationButtonClicked(object sender, EventArgs e)
     {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
-        else
-            CounterBtn.Text = $"Clicked {count} times";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new GifPage());
     }
 }
